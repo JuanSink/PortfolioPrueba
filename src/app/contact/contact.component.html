@@ -1,1 +1,43 @@
-<p>contact works!</p>
+<div class="login-form">
+    <div class="card">
+      <form class="user-login" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput type="email" formControlName="email">
+            </mat-form-field>
+            <div *ngIf="formControl.email.errors" class="text-danger">
+              <div *ngIf="formControl.email.errors.email">El email debe ser valido.</div>
+              <div *ngIf="formControl.email.errors.required">Se necesita un email.</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <div *ngIf="formControl.password.errors" class="text-danger">
+              <div *ngIf="formControl.password.errors.required">Password es necesario..</div>
+              <div *ngIf="formControl.password.errors.pattern">
+                <!--<ul>
+                <li>Password should be alphanumeric</li>
+                <li>A letter of the password should be capital</li>
+                <li>Password must contain a special character (@, $, !, &, etc)</li>
+                <li>Password length must be greater than 7 characters</li>
+                </ul> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <button mat-raised-button type="submit" color="primary">Ingresar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
