@@ -13,13 +13,15 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import {MatInputModule} from '@angular/material/input';
+import { HabilidadesComponent } from './habilidades/habilidades.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SeccionInformacionComponent,
     NavbarComponent,
-    ContactComponent
+    ContactComponent,
+    HabilidadesComponent
   ],
   imports: [
     BrowserModule,
