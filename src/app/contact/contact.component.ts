@@ -8,39 +8,31 @@ import { Router } from "@angular/router";
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
-  loginForm: FormGroup | any;
 
-  
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
-
+  formularioDeContacto: FormGroup | any;
+ 
+  constructor(private formBuilder: FormBuilder) { }
+ 
   ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ["", [Validators.email, Validators.required]],
-      password: [
+    this.formularioDeContacto = this.formBuilder.group({
+      nombre: ["", [Validators.required]],
+      mensaje: [
         "",
         [
           Validators.required,
-      /*     Validators.pattern(
-            "(?=.*[A-Za-z])(?=.*[0-9])(?=.*[$@$!#^~%*?&,.<>\"'\\;:{\\}\\[\\]\\|\\+\\-\\=\\_\\)\\(\\)\\`\\/\\\\\\]])[A-Za-z0-9d$@].{7,}"
-          ) */
         ]
       ]
     });
   }
+  alEnviarMensaje() {
+ 
+ 
+    if (this.formularioDeContacto.valid == true) {
 
-  get formControl() {
-    return this.loginForm.controls;
+      window.open('https://wa.me/' + 2216339719 + '?text=Hola, mi nombre es '
+      + this.formularioDeContacto.value.nombre +
+      '. Me quiero contactar con vos por lo siguiente:'
+      + this.formularioDeContacto.value.mensaje, '_blank');
+  } }
+
   }
-
-  onLogin() {
-
-
-    if (this.loginForm.valid) {
-      alert('INGRESO TODO BIEN');
-    }else{
-
-      alert('INGRESO ALGO MAL');
-
-    }
-  }
-}
