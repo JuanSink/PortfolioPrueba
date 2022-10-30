@@ -1,7 +1,8 @@
 <div class="container-fluid text-center">
   <form  [formGroup]="formularioDeContacto" (ngSubmit)="alEnviarMensaje()">
 <div class="row">
-  <div class="col-md-12 text-center">
+  <div class="col-md-12 text-center" class="Contact">
+    <p class="fw-bold fs-1">CONTACTO</p>
     <mat-form-field appearance="fill">
       <mat-label>Nombre</mat-label>
       <input matInput type="text" formControlName="nombre">

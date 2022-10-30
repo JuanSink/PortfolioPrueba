@@ -6,36 +6,44 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  @Input() referenciaSeccion: any;
-  @Input() referenciaDos: any;
+  @Input() seccionInfo: any;
+  @Input() seccionHabilidades: any;
+  @Input() seccionContacto: any;
 
   
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.referenciaSeccion);
-
-    
+   
   }
 
 
-   scrollToIntro() {
-    this.referenciaSeccion.scrollIntoView({
+   scrollToInfo() {
+    this.seccionInfo.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest'
     }
     );
   
-  
   }
 
-  scrollToIntro2() {
-    this.referenciaDos.scrollIntoView({
+  scrollToHabilidades() {
+    this.seccionHabilidades.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
         inline: 'nearest'
     });
+
+  }
+
+    scrollToContacto() {
+      this.seccionContacto.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'nearest'
+      });
+    
   
   
   }

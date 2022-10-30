@@ -13,17 +13,8 @@ export class AppComponent {
 
   }
 
-  @ViewChild('intro') intro: ElementRef | any;
-  @ViewChild('intro2') intro2: ElementRef | any;
-
-
-vamosABerisso(){
-
-  
-  alert('Estas a punto a salir');
-
-  window.open ('http://berisso.gob.ar/');
-
-}
+  @ViewChild('seccionInfo') seccionInfo: ElementRef | any;
+  @ViewChild('seccionHabilidades') seccionHabilidades: ElementRef | any;
+  @ViewChild('seccionContacto') seccionContacto: ElementRef | any;
 
 }

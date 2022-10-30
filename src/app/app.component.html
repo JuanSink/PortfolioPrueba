@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar [seccionInfo]="seccionInfo" [seccionHabilidades]="seccionHabilidades" [seccionContacto]="seccionContacto"></app-navbar>
 
 <div class="container-fluid">
     <div class="row">
@@ -19,13 +19,22 @@
 </div>
 
 
+<div #seccionInfo>
 
-<app-seccion-informacion></app-seccion-informacion>
+ <app-seccion-informacion></app-seccion-informacion>
 
-<app-habilidades></app-habilidades>
+</div>
 
-<app-contact></app-contact>
-  
-  
+<div #seccionHabilidades>
+
+ <app-habilidades></app-habilidades>
+
+</div>
+
+<div #seccionContacto>
+
+ <app-contact></app-contact>
+
+</div>
   
   
